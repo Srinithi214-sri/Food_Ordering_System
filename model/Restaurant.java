@@ -5,12 +5,14 @@ public class Restaurant {
     private String address;
     private String email;
     private String contact;
-    public Restaurant(String res_ID,String name,String address,String email,String contact) {
+    private String password;
+    public Restaurant(String res_ID,String name,String address,String email,String contact,String password) {
         this.res_ID=res_ID;
         this.name=name;
         this.address=address;
         this.email=email;
         this.contact=contact;
+        this.password=password;
     }
     public void setID(String res_ID) {
         this.res_ID = res_ID;
@@ -27,6 +29,9 @@ public class Restaurant {
         public void setcontact(String contact){
             this.contact=contact;
         }
+        public void setPassword(String password){
+            this.password=password;
+        }
         public String getID() {
             return this.res_ID;
         }
@@ -41,5 +46,8 @@ public class Restaurant {
         }
         public String getcontact(){
             return this.contact;
+        }
+        public String getPassword(){
+            return this.password;
         }
     }

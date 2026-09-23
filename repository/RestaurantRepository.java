@@ -6,5 +6,14 @@ public class RestaurantRepository {
     public void addRestaurant(Restaurant restaurant) {
         res.add(restaurant);
     }
- 
+     public Restaurant find(String email) {
+        for(Restaurant rest:res){
+            String h=rest.getemail();
+            if(h.equals(email)){
+                return rest;
+                
+            }
+        }
+        return null;
+     }
 }

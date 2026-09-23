@@ -12,8 +12,25 @@ public class RestaurantView {
         String email=sc.nextLine();
         System.out.println("Enter Restuarant Contact Number: ");
         String contact=sc.nextLine();
+        System.out.println("Enter Password: ");
+        String password=sc.nextLine();
         RestaurantController restaurant=new RestaurantController();
-        restaurant.register(name, address, email, contact);
+        restaurant.register(name, address, email, contact, password);
+        System.out.println("Enter Email: ");
+        String logemail=sc.nextLine();
+        System.out.println("Enter Password: ");
+        String logpass=sc.nextLine();
+        boolean loggedIn=restaurant.login(logemail,logpass);
+        if(loggedIn==true){
+            System.out.println("======Restaurant Dashboard======");
+            System.out.println("1. Add Food Item");
+            System.out.println("2. View Orders");
+            System.out.println("3. Update Order Status");
+            System.out.println("4. Logout");
+            System.out.println();
+            System.out.print("Enter your choice: ");
+            int choice=sc.nextInt();
 
+        }
     }
 }

@@ -1,5 +1,7 @@
 package controller;
+import model.Food;
 import model.Restaurant;
+import repository.FoodRepository;
 import repository.RestaurantRepository;
 public class RestaurantController {
     int r=1;
@@ -26,5 +28,13 @@ public class RestaurantController {
                 return false;
             }
         }
+    }
+    int f=1;
+    FoodRepository foodrepo = new FoodRepository();
+    public void addFood(String name,double price,String res_ID){
+        String foodID="FOOD"+""+f++;
+        Food food=new Food(foodID,name,price,res_ID);
+        foodrepo.addFood(food);
+        System.out.println("Food Added Successfully");
     }
 }

@@ -2,14 +2,17 @@ package controller;
 import model.Customer;
 import repository.CustomerRepository;
 import repository.FoodRepository;
+import repository.RestaurantRepository;
 public class CustomerController {
 
     CustomerRepository repo = new CustomerRepository();
     FoodRepository foodrepo;
-
-        public CustomerController(FoodRepository foodrepo) {
-        this.foodrepo = foodrepo;
-        }
+    RestaurantRepository restaurantRepo;
+    
+    public CustomerController(RestaurantRepository restaurantRepo, FoodRepository foodrepo) {
+    this.foodrepo = foodrepo;
+    this.restaurantRepo = restaurantRepo;
+    }
     int f=1;
     public void register(String name,String email,String phone,String address,String password){
         

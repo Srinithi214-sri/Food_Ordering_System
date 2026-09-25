@@ -6,7 +6,14 @@ import repository.RestaurantRepository;
 public class RestaurantController {
     int r=1;
     String res_ID="";
-    RestaurantRepository repo=new RestaurantRepository();
+    int f=1;
+    RestaurantRepository repo;
+    FoodRepository foodrepo;
+    public RestaurantController(RestaurantRepository repo,FoodRepository foodrepo) {
+    this.foodrepo = foodrepo;
+    this.repo = repo;
+    }
+    // RestaurantRepository repo=new RestaurantRepository();
     public void register(String name,String address,String email,String contact,String password){
         String resID="RES"+""+r++;
         Restaurant restaurant=new Restaurant(resID,name,address,email,contact,password);
@@ -34,11 +41,12 @@ public class RestaurantController {
         }
         
     }
-    int f=1;
-    FoodRepository foodrepo;
-    public RestaurantController(FoodRepository foodrepo) {
-    this.foodrepo = foodrepo;
-    }
+    // int f=1;
+    // FoodRepository foodrepo;
+    // public RestaurantController(RestaurantRepository repo,FoodRepository foodrepo) {
+    // this.foodrepo = foodrepo;
+    // this.repo = repo;
+    // }
     public void addFood(String name,double price){
         String foodID="FOOD"+""+f++;
         Food food=new Food(foodID,name,price,res_ID);

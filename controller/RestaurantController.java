@@ -35,7 +35,10 @@ public class RestaurantController {
         
     }
     int f=1;
-    FoodRepository foodrepo = new FoodRepository();
+    FoodRepository foodrepo;
+    public RestaurantController(FoodRepository foodrepo) {
+    this.foodrepo = foodrepo;
+    }
     public void addFood(String name,double price){
         String foodID="FOOD"+""+f++;
         Food food=new Food(foodID,name,price,res_ID);

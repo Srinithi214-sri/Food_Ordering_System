@@ -1,10 +1,15 @@
 package controller;
 import model.Customer;
 import repository.CustomerRepository;
+import repository.FoodRepository;
 public class CustomerController {
 
     CustomerRepository repo = new CustomerRepository();
-    
+    FoodRepository foodrepo;
+
+        public CustomerController(FoodRepository foodrepo) {
+        this.foodrepo = foodrepo;
+        }
     int f=1;
     public void register(String name,String email,String phone,String address,String password){
         

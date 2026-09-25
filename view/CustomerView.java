@@ -1,8 +1,8 @@
 package view;
-import java.util.*;
 import controller.CustomerController;
+import java.util.*;
 public class CustomerView {
-    public static void main(String[] args){
+    public void start(CustomerController customer) {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter Name: ");
         String name=sc.nextLine();
@@ -14,7 +14,7 @@ public class CustomerView {
         String addr=sc.nextLine();
         System.out.println("Your Password: ");
         String pass=sc.nextLine();
-        CustomerController customer=new CustomerController();
+        // CustomerController customer=new CustomerController();
         customer.register(name,email,phne,addr,pass);
         System.out.println("Enter Email: ");
         String logemail=sc.nextLine();

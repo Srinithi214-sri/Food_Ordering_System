@@ -2,7 +2,7 @@ package view;
 import controller.RestaurantController;
 import java.util.*;
 public class RestaurantView {
-    public static void main(String[] args) {
+    public void start(RestaurantController restaurant) {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter Restaurant Name: ");
         String name=sc.nextLine();
@@ -14,7 +14,9 @@ public class RestaurantView {
         String contact=sc.nextLine();
         System.out.println("Enter Password: ");
         String password=sc.nextLine();
-        RestaurantController restaurant=new RestaurantController();
+        // RestaurantController restaurant=new RestaurantController();
+//         FoodRepository foodrepo = new FoodRepository();
+// RestaurantController restaurant = new RestaurantController(foodrepo);
         restaurant.register(name, address, email, contact, password);
         System.out.println("Enter Email: ");
         String logemail=sc.nextLine();

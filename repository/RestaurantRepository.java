@@ -16,4 +16,14 @@ public class RestaurantRepository {
         }
         return null;
      }
+     public Restaurant findbyrestaurant(String name){
+        for(Restaurant rest:res){
+            String h=rest.getname();
+            if(h.equals(name)){
+                return rest;
+            }
+        }
+        return null;
+
+     }
 }

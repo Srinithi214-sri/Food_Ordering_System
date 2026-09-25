@@ -40,7 +40,7 @@ public class RestaurantView {
                     System.out.println("Enter Food Price: ");
                     double foodprice=sc.nextDouble();
                     sc.nextLine();
-                    restaurant.addFood(foodname,foodprice,"RES1");
+                    restaurant.addFood(foodname,foodprice);
                     break;
                 case 2:
                         //

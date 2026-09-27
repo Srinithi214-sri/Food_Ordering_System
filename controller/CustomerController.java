@@ -1,5 +1,8 @@
 package controller;
+import java.util.ArrayList;
 import model.Customer;
+import model.Food;
+import model.Restaurant;
 import repository.CustomerRepository;
 import repository.FoodRepository;
 import repository.RestaurantRepository;
@@ -52,6 +55,28 @@ public class CustomerController {
                 System.out.println("Invalid password");
                 return false;
             }
+        }
+    }
+    public void displayAllRestaurants(){
+         ArrayList<Restaurant> restaurants = restaurantRepo.getAllRestaurants();
+         int i = 1;
+            for(Restaurant rest : restaurants){
+            System.out.println(i + ". " + rest.getname());
+            i++;
+            }
+    }
+    public void searchRestaurant(String name){
+        
+        Restaurant restaurant = restaurantRepo.findbyrestaurant(name);
+        if(restaurant != null) {
+            
+            System.out.println("Restaurant found: " + restaurant.getname());
+            ArrayList<Food> foods = foodrepo.findbyrestaurant(restaurant.getID());
+            for(Food food:foods){
+                System.out.println("Food: " + food.getfoodname() + "  " + "Price: " + food.getfoodprice());
+            }
+        } else {
+            System.out.println("Restaurant not found");
         }
     }
 }

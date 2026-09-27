@@ -26,4 +26,7 @@ public class RestaurantRepository {
         return null;
 
      }
+     public ArrayList<Restaurant> getAllRestaurants(){
+    return res;
+}
 }

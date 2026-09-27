@@ -32,6 +32,15 @@ public class CustomerView {
             System.out.println();
             System.out.println("Enter your choice: ");
             int choice=sc.nextInt();
+            switch(choice){
+                case 1:
+                customer.displayAllRestaurants();
+                sc.nextLine();
+                System.out.println("Enter Restaurant Name: ");
+                String restaurantName = sc.nextLine();
+                customer.searchRestaurant(restaurantName);
+                break;
+            }
         }
 
     }

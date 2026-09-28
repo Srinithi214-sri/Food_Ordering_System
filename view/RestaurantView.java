@@ -34,7 +34,7 @@ public class RestaurantView {
             System.out.println();
             System.out.print("Enter your choice: ");
             choice=sc.nextInt();
-            sc.nextLine(); // Consume the newline character
+            sc.nextLine(); 
             switch(choice){
                 case 1:
                     System.out.println("Enter Food Name: ");

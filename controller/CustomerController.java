@@ -70,7 +70,10 @@ public class CustomerController {
         Restaurant restaurant = restaurantRepo.findbyrestaurant(name);
         if(restaurant != null) {
             
-            System.out.println("Restaurant found: " + restaurant.getname());
+            System.out.println("Restaurant: " + restaurant.getname());
+            System.out.println("Email: "+restaurant.getemail());
+            System.out.println("Phone Number: "+restaurant.getcontact());
+            System.out.println("Address: "+restaurant.getaddress());
             ArrayList<Food> foods = foodrepo.findbyrestaurant(restaurant.getID());
             for(Food food:foods){
                 System.out.println("Food: " + food.getfoodname() + "  " + "Price: " + food.getfoodprice());

@@ -75,8 +75,12 @@ public class CustomerController {
             System.out.println("Phone Number: "+restaurant.getcontact());
             System.out.println("Address: "+restaurant.getaddress());
             ArrayList<Food> foods = foodrepo.findbyrestaurant(restaurant.getID());
+            System.out.println();
+            System.out.println("Food Items");
+            int i=1;
             for(Food food:foods){
-                System.out.println("Food: " + food.getfoodname() + "  " + "Price: " + food.getfoodprice());
+                System.out.println(i + ". " + "Food: " + food.getfoodname() + "  " + "Price: " + food.getfoodprice());
+                i++;
             }
         } else {
             System.out.println("Restaurant not found");

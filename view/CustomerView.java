@@ -26,9 +26,8 @@ public class CustomerView {
             System.out.println();
             System.out.println("1. Search Restaurant");
             System.out.println("2. Browse Food");
-            System.out.println("3. Place Order");
-            System.out.println("4. View Orders");
-            System.out.println("5. Logout");
+            System.out.println("3. View Orders");
+            System.out.println("4. Logout");
             System.out.println();
             System.out.println("Enter your choice: ");
             int choice=sc.nextInt();

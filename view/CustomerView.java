@@ -41,6 +41,8 @@ public class CustomerView {
                 customer.searchRestaurant(restaurantName);
                 break;
                 case 2:
+                    System.out.println("========Available Foods========");
+                    System.out.println();
                     customer.displayAllFoods();
                     break;
             }

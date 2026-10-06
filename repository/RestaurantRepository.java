@@ -28,5 +28,14 @@ public class RestaurantRepository {
      }
      public ArrayList<Restaurant> getAllRestaurants(){
     return res;
-}
+    }
+    public Restaurant findbyID(String res_ID){
+        for(Restaurant rest:res){
+            String h=rest.getID();
+            if(h.equals(res_ID)){
+                return rest;
+            }
+        }
+        return null;
+    }
 }

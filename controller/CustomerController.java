@@ -90,7 +90,10 @@ public class CustomerController {
         ArrayList<Food> foods=foodrepo.getAllFoods();
         int i=1;
         for(Food food:foods){
+            Restaurant restaurant = restaurantRepo.findbyID(food.getresID());
             System.out.println(i+". "+"Food: "+food.getfoodname()+"  "+"Price: "+food.getfoodprice());
+            System.out.println("Restaurant: "+restaurant.getname());
+            System.out.println();
             i++;
         }
     }

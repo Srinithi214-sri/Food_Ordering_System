@@ -86,4 +86,12 @@ public class CustomerController {
             System.out.println("Restaurant not found");
         }
     }
+    public void displayAllFoods(){
+        ArrayList<Food> foods=foodrepo.getAllFoods();
+        int i=1;
+        for(Food food:foods){
+            System.out.println(i+". "+"Food: "+food.getfoodname()+"  "+"Price: "+food.getfoodprice());
+            i++;
+        }
+    }
 }

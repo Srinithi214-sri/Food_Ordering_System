@@ -40,6 +40,9 @@ public class CustomerView {
                 String restaurantName = sc.nextLine();
                 customer.searchRestaurant(restaurantName);
                 break;
+                case 2:
+                    customer.displayAllFoods();
+                    break;
             }
         }
 

@@ -16,4 +16,7 @@ public class FoodRepository {
         }
        return result;
     }
+    public ArrayList<Food> getAllFoods(){
+    return food;
+    }
 }

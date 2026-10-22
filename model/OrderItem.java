@@ -22,16 +22,16 @@ public class OrderItem {
     public void setQuantity(int Quantity){
         this.Quantity=Quantity;
     }
-    public String OrderItemID(){
+    public String getOrderItemID(){
         return OrderItemID;
     }
-    public String OrderID(){
+    public String getOrderID(){
         return OrderID;
     }
-    public String FoodID(){
+    public String getFoodID(){
         return FoodID;
     }
-    public int Quantity(){
+    public int getQuantity(){
         return Quantity;
     }
 }

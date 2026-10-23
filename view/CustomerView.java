@@ -1,9 +1,11 @@
 package view;
 import controller.CustomerController;
+import controller.OrderController;
 import java.util.*;
 public class CustomerView {
     public void start(CustomerController customer) {
         Scanner sc=new Scanner(System.in);
+        OrderController orderController = new OrderController();
         System.out.println("Enter Name: ");
         String name=sc.nextLine();
         System.out.println("Enter Email: ");
@@ -44,6 +46,13 @@ public class CustomerView {
                     System.out.println();
                     customer.displayAllFoods();
                     break;
+                case 3:
+                    String customerID = customer.getLoggedInCustomerID();
+                    orderController.viewCustomerOrders(customerID);
+                     break;
+                case 4:
+                     System.out.println("Logging out...");
+                      break;
             }
         }
 

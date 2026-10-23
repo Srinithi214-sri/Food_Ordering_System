@@ -105,4 +105,26 @@ public class CustomerController {
             i++;
         }
     }
+    public Food getFoodByNumber(int foodNumber) {
+    ArrayList<Food> foods = foodrepo.getAllFoods();
+
+    if (foodNumber < 1 || foodNumber > foods.size()) {
+        return null;
+    }
+
+    return foods.get(foodNumber - 1);
+}
+    public ArrayList<Food> getAllFoodsForOrdering() {
+        return foodrepo.getAllFoods();
+    }
+
+    public ArrayList<Food> getFoodsByRestaurantName(String name) {
+        Restaurant restaurant = restaurantRepo.findbyrestaurant(name);
+
+        if (restaurant == null) {
+            return new ArrayList<>();
+        }
+
+        return foodrepo.findbyrestaurant(restaurant.getID());
+    }
 }

@@ -9,6 +9,7 @@ import repository.RestaurantRepository;
 public class CustomerController {
 
     CustomerRepository repo = new CustomerRepository();
+    private Customer loggedInCustomer;
     FoodRepository foodrepo;
     RestaurantRepository restaurantRepo;
     
@@ -49,6 +50,7 @@ public class CustomerController {
             return false;
         } else {
             if(customer.getpass().equals(password)) {
+                loggedInCustomer = customer;
                 System.out.println("Login successful");
                 return true;
             } else {
@@ -57,6 +59,12 @@ public class CustomerController {
             }
         }
     }
+    public String getLoggedInCustomerID() {
+    if (loggedInCustomer == null) {
+        return null;
+    }
+    return loggedInCustomer.getID();
+}
     public void displayAllRestaurants(){
          ArrayList<Restaurant> restaurants = restaurantRepo.getAllRestaurants();
          int i = 1;

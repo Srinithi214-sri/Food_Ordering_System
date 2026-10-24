@@ -5,7 +5,8 @@ import model.Food;
 import java.util.*;
 public class CustomerView {
     private int orderCounter = 1;
-    private int itemCounter = 1;
+    // private int itemCounter = 1;
+    private PaymentView paymentView = new PaymentView();
     public void start(CustomerController customer,OrderController orderController) {
         Scanner sc=new Scanner(System.in);
         // OrderController orderController = new OrderController();
@@ -72,6 +73,8 @@ public class CustomerView {
                 case 3:
                     String customerID = customer.getLoggedInCustomerID();
                     orderController.viewCustomerOrders(customerID);
+                    sc.nextLine();
+                    paymentView.displaypaymentoptions(sc);
                      break;
                 case 4:
                      System.out.println("Logging out...");

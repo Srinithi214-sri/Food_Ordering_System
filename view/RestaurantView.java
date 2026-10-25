@@ -25,12 +25,12 @@ public class RestaurantView {
         boolean loggedIn=restaurant.login(logemail,logpass);
         if(loggedIn==true){
             int choice=0;
-            while(choice!=4){
+            while(choice!=3){
             System.out.println("======Restaurant Dashboard======");
             System.out.println("1. Add Food Item");
             System.out.println("2. View Orders");
-            System.out.println("3. Update Order Status");
-            System.out.println("4. Logout");
+            // System.out.println("3. Update Order Status");
+            System.out.println("3. Logout");
             System.out.println();
             System.out.print("Enter your choice: ");
             choice=sc.nextInt();
@@ -47,11 +47,14 @@ public class RestaurantView {
                 case 2:
                         //
                         break;
+                // case 3:
+                //             //
+                //          break;
                 case 3:
-                            //
-                         break;
-                case 4:
                     System.out.println("Logged Out Successfully");
+                    System.out.println();
+                    System.out.println("======CUSTOMER REGISTRATION======");
+                    System.out.println();
                     break;
                 default:
                     System.out.println("Invalid Choice");

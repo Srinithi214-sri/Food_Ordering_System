@@ -40,6 +40,7 @@ public class CustomerView {
             System.out.println();
             System.out.println("Enter your choice: ");
             int choice=sc.nextInt();
+            sc.nextLine();
             switch(choice){
                 case 1:
                     customer.displayAllRestaurants();
@@ -73,7 +74,7 @@ public class CustomerView {
                 case 3:
                     String customerID = customer.getLoggedInCustomerID();
                     orderController.viewCustomerOrders(customerID);
-                    sc.nextLine();
+                    // sc.nextLine();
                     paymentView.displaypaymentoptions(sc);
                      break;
                 case 4:
@@ -94,9 +95,9 @@ private void orderFood(Scanner sc, CustomerController customer,
     ArrayList<Integer> quantities = new ArrayList<>();
 
     while (true) {
-        for (int i = 0; i < foods.size(); i++)
-            System.out.println((i + 1) + ". " + foods.get(i).getfoodname()
-                    + " - " + foods.get(i).getfoodprice());
+        // for (int i = 0; i < foods.size(); i++)
+        //     System.out.println((i + 1) + ". " + foods.get(i).getfoodname()
+        //             + " - " + foods.get(i).getfoodprice());
 
         System.out.println("Enter food number (0 to finish):");
         int n = sc.nextInt();

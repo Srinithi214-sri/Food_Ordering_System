@@ -3,11 +3,13 @@ import controller.CustomerController;
 import controller.OrderController;
 import model.Food;
 import controller.DeliveryController;
+import view.DeliveryView;
 import java.util.*;
 public class CustomerView {
     private int orderCounter = 1;
     // private int itemCounter = 1;
     private PaymentView paymentView = new PaymentView();
+    private DeliveryView deliveryView = new DeliveryView();
     public void start(CustomerController customer,OrderController orderController, DeliveryController deliveryController) {
         Scanner sc=new Scanner(System.in);
         // OrderController orderController = new OrderController();
@@ -77,6 +79,9 @@ public class CustomerView {
                     orderController.viewCustomerOrders(customerID);
                     // sc.nextLine();
                     paymentView.displaypaymentoptions(sc);
+                    System.out.print("Enter Order ID for delivery: ");
+                    String orderID=sc.nextLine();
+                    deliveryView.start(sc,deliveryController,orderID);
                      break;
                 case 4:
                      System.out.println("Logging out...");

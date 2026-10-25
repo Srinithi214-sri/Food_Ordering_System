@@ -1,23 +1,26 @@
 import controller.CustomerController;
 import controller.RestaurantController;
 import controller.OrderController;
+import controller.DeliveryController;
 import repository.FoodRepository;
 import repository.RestaurantRepository;
 import view.CustomerView;
 import view.RestaurantView;
 public class main{
     public static void main(String[] args){
+
         FoodRepository foodrepo=new FoodRepository();
         RestaurantRepository restaurantRepo = new RestaurantRepository();
+
         OrderController orderController = new OrderController(foodrepo);
        CustomerController customer = new CustomerController(restaurantRepo, foodrepo);
         RestaurantController restaurant = new RestaurantController(restaurantRepo, foodrepo);
-        
+        DeliveryController deliveryController = new DeliveryController();
 
         RestaurantView restaurantView = new RestaurantView();
         restaurantView.start(restaurant);
 
         CustomerView customerView = new CustomerView();
-        customerView.start(customer, orderController);
+        customerView.start(customer, orderController,deliveryController);
     }
 }

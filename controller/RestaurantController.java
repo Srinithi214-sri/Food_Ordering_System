@@ -18,7 +18,10 @@ public class RestaurantController {
         String resID="RES"+""+r++;
         Restaurant restaurant=new Restaurant(resID,name,address,email,contact,password);
         repo.addRestaurant(restaurant);
-        System.out.println("Restaurant Registered Successfully");
+        System.out.println();
+        System.out.println("RESTAURANT REGISTERED SUCCESSFULLY");
+        System.out.println();
+        System.out.println("======LOGIN======");
     }
     public boolean login(String email,String password) {
         Restaurant restaurant=repo.find(email);
@@ -31,6 +34,7 @@ public class RestaurantController {
         else {
             if(restaurant.getPassword().equals(password)){
                 System.out.println("Login Successful");
+                System.out.println();
                 res_ID=restaurant.getID();
                 return true;
             }

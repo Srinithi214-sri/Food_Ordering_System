@@ -41,7 +41,9 @@ public class CustomerController {
         Customer customer=new Customer(cus_ID,name, email, phone, address, password);
         repo.addCustomer(customer);
         System.out.println("Customer Registered Successfully");
-        // System.out.println("Customer ID: "+cus_ID);
+        System.out.println();
+        System.out.println("======LOGIN======");
+        
     }
     public boolean login(String email,String password){
         Customer customer=repo.find(email);
@@ -51,7 +53,10 @@ public class CustomerController {
         } else {
             if(customer.getpass().equals(password)) {
                 loggedInCustomer = customer;
-                System.out.println("Login successful");
+                System.out.println();
+                System.out.println("LOGIN SUCCESSFUL");
+                System.out.println();
+
                 return true;
             } else {
                 System.out.println("Invalid password");
